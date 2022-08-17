@@ -8,7 +8,6 @@ add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 
 
 function my_theme_enqueue_styles() {
-  // wp_enqueue_script('tj-test-js', get_stylesheet_directory_uri() . '/test.js', array('jquery', 'tj-custom-scripts'), $scriptTimeStamp, true);
   if (is_page('about-us')) {
     $cssTimeStamp = filemtime(get_stylesheet_directory() . '/style.css');
     wp_enqueue_style( 'tj-style', get_stylesheet_directory_uri() . '/style.css', array(), $cssTimeStamp );
